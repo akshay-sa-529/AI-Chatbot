@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Richi </title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="chat-container">
+    <div class="chat-header">
+      <span>🤖 Richi</span>
+      <button id="resetBtn" title="Clear conversation">⟳</button>
+    </div>
+    <div id="messages" class="messages"></div>
+    <form id="chatForm" class="chat-form">
+      <input id="userInput" type="text" placeholder="Type a message…" autocomplete="off" required>
+      <button type="submit">Send</button>
+    </form>
+  </div>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
