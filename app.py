@@ -1,10 +1,4 @@
-"""
-Free 24/7 AI Chatbot — Flask backend
---------------------------------------
-Uses Groq's free API (fast, free tier, no credit card required) to power
-an AI chatbot. Swap GROQ_API_KEY / MODEL for any OpenAI-compatible free
-provider if you like (see README.md for alternatives).
-"""
+# chatbot app.py
 
 import os
 import requests
@@ -18,7 +12,7 @@ app.secret_key = os.environ.get("SECRET_KEY", "dev-secret-change-me")
 
 GROQ_API_KEY = os.environ.get("GROQ_API_KEY", "")
 GROQ_URL = "https://api.groq.com/openai/v1/chat/completions"
-MODEL = os.environ.get("MODEL", "llama-3.1-8b-instant")  # free Groq model
+MODEL = os.environ.get("MODEL", "llama-3.1-8b-instant")  # groc model
 
 SYSTEM_PROMPT = (
     "You are a Richi, a friendly ,helpful assistant embedded in a website chat widget. "
@@ -41,10 +35,10 @@ def chat():
     if not user_message:
         return jsonify({"error": "Empty message"}), 400
 
-    # Keep a short rolling history per browser session
+    
     history = session.get("history", [])
     history.append({"role": "user", "content": user_message})
-    history = history[-10:]  # cap context to last 10 turns
+    history = history[-10:]  
 
     messages = [{"role": "system", "content": SYSTEM_PROMPT}] + history
 
@@ -74,9 +68,7 @@ def reset():
     session.pop("history", None)
     return jsonify({"status": "ok"})
 
-
-# Simple health check endpoint — ping this with UptimeRobot to keep the
-# app awake 24/7 on free hosts that sleep after inactivity.
+# app awake 24/7 on free 
 @app.route("/health")
 def health():
     return jsonify({"status": "alive"})
