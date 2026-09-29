@@ -1,4 +1,4 @@
-# richi.ai
+# richi.ai a chatbot
 
 A simple AI chatbot I built with Flask and Groq's free API. It's got a clean
 chat widget, remembers the conversation while you're chatting, and runs
