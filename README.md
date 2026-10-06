@@ -3,9 +3,9 @@
 <img width="1892" height="948" alt="Screenshot 2026-10-06 205224" src="https://github.com/user-attachments/assets/03f5b820-fa72-492f-ae3e-7f6e2be1c360" />
 
 
-A simple AI chatbot I built with Flask and Groq's free API. It's got a clean
+A simple AI chatbot I built with Flask and Groq's API. It's got a clean
 chat widget, remembers the conversation while you're chatting, and runs
-completely free — no paid API keys, no paid hosting.
+completely.
 
 ## What it does
 
